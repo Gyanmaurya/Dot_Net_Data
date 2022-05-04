@@ -7,19 +7,20 @@
  app.use(express.json());
 const cors=require('cors');
 app.use(cors())
- const userController=require("./controller/user.controller");
- app.use("/users",userController);
- app.get("/gyan",async(req,res)=>{
-     try {
-        return res.status(200).send('Now Data imported in heroku ');
-     } catch (error) {
+ const dataController=require("./controller/data.controller");
+ app.use("/data",dataController);
+ 
+//  app.get("/gyan",async(req,res)=>{
+//      try {
+//         return res.status(200).send('Now Data imported in heroku ');
+//      } catch (error) {
 
-        console.log(error);
+//         console.log(error);
         
 
-        return res.status(400).send({message:error.message});
-     }
- })
+//         return res.status(400).send({message:error.message});
+//      }
+//  })
 
 
 
